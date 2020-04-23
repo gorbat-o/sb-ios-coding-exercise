@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69D0CCC6245109A700D41739 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D0CCC5245109A700D41739 /* Recommendation.swift */; };
+		69E077E024510FDB00F29C56 /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E077DF24510FDB00F29C56 /* Titles.swift */; };
+		69E077E224511A5800F29C56 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E077E124511A5800F29C56 /* NetworkManager.swift */; };
+		69E077E72451210400F29C56 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E077E62451210400F29C56 /* NSObjectExtension.swift */; };
+		69E077E92451210E00F29C56 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E077E82451210E00F29C56 /* UITableViewCellExtension.swift */; };
 		7A7852F4244F410900651421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7852F3244F410900651421 /* AppDelegate.swift */; };
 		7A7852F8244F410900651421 /* RecommendationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7852F7244F410900651421 /* RecommendationsViewController.swift */; };
 		7A7852FB244F410900651421 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7852F9244F410900651421 /* Main.storyboard */; };
@@ -23,6 +28,11 @@
 		023FD0B1C204B2A9FD2FFC15 /* Pods-Recommendations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recommendations.debug.xcconfig"; path = "Target Support Files/Pods-Recommendations/Pods-Recommendations.debug.xcconfig"; sourceTree = "<group>"; };
 		296F577824B62DA31BB5053D /* Pods-Recommendations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recommendations.release.xcconfig"; path = "Target Support Files/Pods-Recommendations/Pods-Recommendations.release.xcconfig"; sourceTree = "<group>"; };
 		4837A2CE5DC84736E4DD6D1B /* libPods-Recommendations.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Recommendations.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69D0CCC5245109A700D41739 /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
+		69E077DF24510FDB00F29C56 /* Titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titles.swift; sourceTree = "<group>"; };
+		69E077E124511A5800F29C56 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		69E077E62451210400F29C56 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		69E077E82451210E00F29C56 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		7A7852F0244F410900651421 /* Recommended.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recommended.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7852F3244F410900651421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A7852F7244F410900651421 /* RecommendationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +67,50 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		69D0CCC22451090500D41739 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				69E077DF24510FDB00F29C56 /* Titles.swift */,
+				69D0CCC5245109A700D41739 /* Recommendation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		69D0CCC32451091900D41739 /* Recommendations */ = {
+			isa = PBXGroup;
+			children = (
+				69D0CCC42451092A00D41739 /* Cells */,
+				7A7852F7244F410900651421 /* RecommendationsViewController.swift */,
+			);
+			path = Recommendations;
+			sourceTree = "<group>";
+		};
+		69D0CCC42451092A00D41739 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7A87BB3B244F5C38008A8669 /* RecommendationTableViewCell.xib */,
+				7A87BB3A244F5C38008A8669 /* RecommendationTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		69D0CCC724510AAD00D41739 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				69E077E124511A5800F29C56 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		69E077E32451201700F29C56 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				69E077E82451210E00F29C56 /* UITableViewCellExtension.swift */,
+				69E077E62451210400F29C56 /* NSObjectExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6FDE32464C86C2038B8BD17C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,10 +140,11 @@
 		7A7852F2244F410900651421 /* Recommendations */ = {
 			isa = PBXGroup;
 			children = (
+				69E077E32451201700F29C56 /* Extensions */,
 				7A87BB42244F9A1F008A8669 /* Do Not Modify These Files */,
-				7A7852F7244F410900651421 /* RecommendationsViewController.swift */,
-				7A87BB3A244F5C38008A8669 /* RecommendationTableViewCell.swift */,
-				7A87BB3B244F5C38008A8669 /* RecommendationTableViewCell.xib */,
+				69D0CCC724510AAD00D41739 /* Network */,
+				69D0CCC22451090500D41739 /* Models */,
+				69D0CCC32451091900D41739 /* Recommendations */,
 				7A7852F9244F410900651421 /* Main.storyboard */,
 				7A7852FC244F410B00651421 /* Assets.xcassets */,
 				7A7852FE244F410B00651421 /* LaunchScreen.storyboard */,
@@ -207,10 +262,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69E077E024510FDB00F29C56 /* Titles.swift in Sources */,
+				69D0CCC6245109A700D41739 /* Recommendation.swift in Sources */,
 				7A87BB3C244F5C38008A8669 /* RecommendationTableViewCell.swift in Sources */,
+				69E077E92451210E00F29C56 /* UITableViewCellExtension.swift in Sources */,
+				69E077E224511A5800F29C56 /* NetworkManager.swift in Sources */,
 				7A7852F8244F410900651421 /* RecommendationsViewController.swift in Sources */,
 				7A7852F4244F410900651421 /* AppDelegate.swift in Sources */,
 				7A87BB41244F9A19008A8669 /* Stub.swift in Sources */,
+				69E077E72451210400F29C56 /* NSObjectExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
