@@ -23,9 +23,7 @@ final class NetworkManager {
             }
             let decoder = JSONDecoder()
             if let titles = try? decoder.decode(Titles.self, from: receivedData) {
-                DispatchQueue.main.async {
-                    callback(titles, nil)
-                }
+                callback(titles, nil)
             } else {
                 callback(nil, error?.localizedDescription)
             }

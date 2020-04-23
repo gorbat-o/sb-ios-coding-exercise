@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690494782451447E000BF547 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690494772451447E000BF547 /* StorageManager.swift */; };
 		69D0CCC6245109A700D41739 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D0CCC5245109A700D41739 /* Recommendation.swift */; };
 		69E077E024510FDB00F29C56 /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E077DF24510FDB00F29C56 /* Titles.swift */; };
 		69E077E224511A5800F29C56 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E077E124511A5800F29C56 /* NetworkManager.swift */; };
@@ -28,6 +29,7 @@
 		023FD0B1C204B2A9FD2FFC15 /* Pods-Recommendations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recommendations.debug.xcconfig"; path = "Target Support Files/Pods-Recommendations/Pods-Recommendations.debug.xcconfig"; sourceTree = "<group>"; };
 		296F577824B62DA31BB5053D /* Pods-Recommendations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recommendations.release.xcconfig"; path = "Target Support Files/Pods-Recommendations/Pods-Recommendations.release.xcconfig"; sourceTree = "<group>"; };
 		4837A2CE5DC84736E4DD6D1B /* libPods-Recommendations.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Recommendations.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		690494772451447E000BF547 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		69D0CCC5245109A700D41739 /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
 		69E077DF24510FDB00F29C56 /* Titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titles.swift; sourceTree = "<group>"; };
 		69E077E124511A5800F29C56 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -94,12 +96,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		69D0CCC724510AAD00D41739 /* Network */ = {
+		69D0CCC724510AAD00D41739 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				69E077E124511A5800F29C56 /* NetworkManager.swift */,
+				690494772451447E000BF547 /* StorageManager.swift */,
 			);
-			path = Network;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		69E077E32451201700F29C56 /* Extensions */ = {
@@ -142,7 +145,7 @@
 			children = (
 				69E077E32451201700F29C56 /* Extensions */,
 				7A87BB42244F9A1F008A8669 /* Do Not Modify These Files */,
-				69D0CCC724510AAD00D41739 /* Network */,
+				69D0CCC724510AAD00D41739 /* Managers */,
 				69D0CCC22451090500D41739 /* Models */,
 				69D0CCC32451091900D41739 /* Recommendations */,
 				7A7852F9244F410900651421 /* Main.storyboard */,
@@ -269,6 +272,7 @@
 				69E077E224511A5800F29C56 /* NetworkManager.swift in Sources */,
 				7A7852F8244F410900651421 /* RecommendationsViewController.swift in Sources */,
 				7A7852F4244F410900651421 /* AppDelegate.swift in Sources */,
+				690494782451447E000BF547 /* StorageManager.swift in Sources */,
 				7A87BB41244F9A19008A8669 /* Stub.swift in Sources */,
 				69E077E72451210400F29C56 /* NSObjectExtension.swift in Sources */,
 			);

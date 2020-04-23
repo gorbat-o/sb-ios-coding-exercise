@@ -9,15 +9,16 @@ import OHHTTPStubs
 final class RecommendationsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
+    private var storageManager = StorageManager()
     private var networkManager = NetworkManager()
     private var recommendations = [Recommendation]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         setupTableView()
-        loadData()
+        loadCachedData { [weak self] in
+            self?.loadData()
+        }
     }
 }
 
@@ -29,6 +30,22 @@ private extension RecommendationsViewController {
         tableView.delegate = self
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
+    }
+
+    func loadCachedData(callbackDone: @escaping () -> Void) {
+        DispatchQueue.global(qos: .default).async { [weak self] in
+            if let retrievedTitles = self?.storageManager.retrieveTitles() {
+                self?.recommendations = self?.filterTitles(with: retrievedTitles) ?? []
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                    callbackDone()
+                }
+            } else {
+                DispatchQueue.main.async {
+                    callbackDone()
+                }
+            }
+        }
     }
 
     func loadData() {
@@ -45,15 +62,21 @@ private extension RecommendationsViewController {
                 print(error)
                 // Show error
             } else if let titles = returnedTitles {
-                let arraySliced = titles.titles
-                    .filter({ $0.isReleased && !titles.skipped.contains($0.title) && !titles.titles_owned.contains($0.title) })
-                    .sorted(by: { $0.rating ?? 0.0 > $1.rating ?? 0.0 })
-                    .prefix(10)
-                self?.recommendations = Array(arraySliced)
-
-                self?.tableView.reloadData()
+                self?.storageManager.store(titles: titles)
+                self?.recommendations = self?.filterTitles(with: titles) ?? []
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
             }
         }
+    }
+
+    func filterTitles(with titles: Titles) -> [Recommendation] {
+        let arraySliced = titles.titles
+            .filter({ $0.isReleased && !titles.skipped.contains($0.title) && !titles.titles_owned.contains($0.title) })
+            .sorted(by: { $0.rating ?? 0.0 > $1.rating ?? 0.0 })
+            .prefix(10)
+        return Array(arraySliced)
     }
 }
 
